@@ -19,7 +19,7 @@ void vertex() {
 void fragment() {
 	ROUGHNESS = 3.0;
 	METALLIC = 0.3;
-    NORMAL_MAP = texture(normalmap, tex_position).xyz;
+  NORMAL_MAP = texture(normalmap, tex_position).xyz;
 	ALBEDO = texture(ground, tex_position * ground_tiling).xyz;
 }
 

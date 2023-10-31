@@ -1,0 +1,49 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "dependsOn": [
+                "build godot",
+                "build rust cdylib",
+            ]
+        },
+        {
+            "label": "build godot",
+            "type": "shell",
+            "command": "pyenv",
+            "args": [
+                "exec",
+                "scons",
+                "use_llvm=yes",
+                "linker=lld",
+                // "arch=x86_64" ,
+                "module_mono_enable=yes",
+                "compiledb=yes",
+                "dev_build=yes "
+                // , platfrom=linuxbsd ,
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "windows": {
+                "options": {
+                    "cwd": "g:/ME/godot" // godot project's directory
+                },
+            },
+        },
+        {
+            "label": "build rust cdylib",
+            "type": "cargo",
+            "command": "build",
+            "problemMatcher": [
+                "$rustc"
+            ],
+            "args": [],
+            "group": "build",
+            "options": {
+                "cwd": "./rust"
+            },
+        },
+    ]
+}
