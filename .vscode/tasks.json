@@ -8,6 +8,7 @@
                 "build rust cdylib",
             ]
         },
+        //
         {
             "label": "build godot",
             "type": "shell",
@@ -17,20 +18,27 @@
                 "scons",
                 "use_llvm=yes",
                 "linker=lld",
-                // "arch=x86_64" ,
                 "module_mono_enable=yes",
                 "compiledb=yes",
                 "dev_build=yes "
+                // determein by host
                 // , platfrom=linuxbsd ,
+                // "arch=x86_64" ,
             ],
             "problemMatcher": [
                 "$gcc"
             ],
+            "linux": {
+                "options": {
+                    "cwd": "/apt/godot"
+                }
+            },
             "windows": {
                 "options": {
                     "cwd": "g:/ME/godot" // godot project's directory
                 },
             },
+            "promptOnClose": true
         },
         {
             "label": "build rust cdylib",
@@ -44,6 +52,7 @@
             "options": {
                 "cwd": "./rust"
             },
+            "promptOnClose": true
         },
     ]
 }

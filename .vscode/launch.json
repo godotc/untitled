@@ -12,7 +12,8 @@
             "args": [
                 "--editor",
                 "--path",
-                "${workspaceFolder}/game"
+                "${workspaceFolder}/game",
+                "--single-window"
             ],
             "cwd": "${workspaceFolder}",
             "stopOnEntry": false,
