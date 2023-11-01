@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://datku2tasyk2i"]
+[gd_scene load_steps=18 format=3 uid="uid://datku2tasyk2i"]
 
 [ext_resource type="Shader" path="res://shader/ground.gdshader" id="1_bnsho"]
+[ext_resource type="Script" path="res://main.gd" id="1_ewhdv"]
 [ext_resource type="Texture2D" uid="uid://hhiv48xm5hrc" path="res://art/sand/GroundSand005_COL_2K.jpg" id="2_hoier"]
 [ext_resource type="Texture2D" uid="uid://iwrt20y4q25k" path="res://art/sand/GroundSand005_DISP_2K.jpg" id="3_3mqy0"]
 [ext_resource type="Script" path="res://script/ground_mesh.gd" id="4_xqy0x"]
@@ -53,6 +54,7 @@ size = Vector3(1.5, 3, 5)
 size = Vector3(1.5, 3, 5)
 
 [node name="Main" type="Node3D"]
+script = ExtResource("1_ewhdv")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, -0.382047, 0.89562, 0.227825, -0.322558, 0.10179, -0.941061, 0, 0, 0)

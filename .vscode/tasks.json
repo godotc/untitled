@@ -4,13 +4,13 @@
         {
             "label": "build",
             "dependsOn": [
-                "build godot",
+                "build godot engine",
                 "build rust cdylib",
             ]
         },
         //
         {
-            "label": "build godot",
+            "label": "build godot engine",
             "type": "shell",
             "command": "pyenv",
             "args": [
@@ -20,7 +20,7 @@
                 "linker=lld",
                 "module_mono_enable=yes",
                 "compiledb=yes",
-                "dev_build=yes "
+                "dev_build=yes"
                 // determein by host
                 // , platfrom=linuxbsd ,
                 // "arch=x86_64" ,
@@ -50,7 +50,7 @@
             "args": [],
             "group": "build",
             "options": {
-                "cwd": "./rust"
+                "cwd": "${workspaceFolder}/rust/rust_fan"
             },
             "promptOnClose": true
         },

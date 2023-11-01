@@ -59,9 +59,7 @@ impl NodeVirtual for MovementComponent {
         //         "Found the parent {}",
         //         component.parent.as_ref().unwrap().to_string()
         //     );
-        // } else {
-        //     println!("Not found")
-        // }
+        // } else { //     println!("Not found") // }
         // let machine = component.node.find_child("AnimationTree".into());
         // if machine.is_some() {
         //     component.animation_tree = machine.unwrap().try_cast::<AnimationTree>();
@@ -75,7 +73,7 @@ impl NodeVirtual for MovementComponent {
         if self.character_root.is_none() {
             return;
         }
-        let mut character = self.character_root.as_deref_mut().unwrap();
+        let character = self.character_root.as_deref_mut().unwrap();
 
         let input = Input::singleton();
         let input_vec = input.get_vector("a".into(), "d".into(), "s".into(), "w".into());

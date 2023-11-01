@@ -12,7 +12,7 @@
             "args": [
                 "--editor",
                 "--path",
-                "${workspaceFolder}/game",
+                "${workspaceFolder}",
                 "--single-window"
             ],
             "cwd": "${workspaceFolder}",
