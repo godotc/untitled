@@ -8,7 +8,6 @@
                 "build rust cdylib",
             ]
         },
-        //
         {
             "label": "build godot engine",
             "type": "shell",
@@ -38,7 +37,15 @@
                     "cwd": "g:/ME/godot" // godot project's directory
                 },
             },
-            "promptOnClose": true
+            "promptOnClose": true,
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            }
         },
         {
             "label": "build rust cdylib",
@@ -50,9 +57,16 @@
             "args": [],
             "group": "build",
             "options": {
-                "cwd": "${workspaceFolder}/rust/rust_fan"
+                "cwd": "${workspaceFolder}/rust"
             },
-            "promptOnClose": true
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
         },
     ]
 }

@@ -1,3 +1,7 @@
 [workspace]
 
 members = ["rust_fun"]
+resolver = "2"
+
+
+

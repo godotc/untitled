@@ -1,7 +1,11 @@
-use godot::engine::{AnimationTree, CharacterBody2D, CharacterBody3D, Input, InputEvent, Node};
+use godot::engine::{
+    AnimationTree, CharacterBody3D, Input, InputEvent, Node,
+    PhysicsDirectSpaceState2DExtensionVirtual,
+};
 use godot::prelude::utilities::move_toward;
 use godot::prelude::*;
 
+#[doc = "The movement component"]
 #[derive(GodotClass)]
 #[class(base=Node)]
 struct MovementComponent {
@@ -21,6 +25,7 @@ struct MovementComponent {
 
     #[export]
     speed: real,
+
     #[export]
     jump_velocity: real,
 }
@@ -48,28 +53,25 @@ impl NodeVirtual for MovementComponent {
             speed: 5.0,
         };
 
-        component.character_root = component
-            .node
-            .get_parent()
-            .and_then(|x| x.try_cast::<CharacterBody3D>());
+        if component.character_root.is_none() {
+            component.character_root = component
+                .node
+                .get_parent()
+                .and_then(|x| x.try_cast::<CharacterBody3D>());
+        }
 
-        // Specify by editor now....
-        // if component.parent.is_some() {
-        //     godot_print!(
-        //         "Found the parent {}",
-        //         component.parent.as_ref().unwrap().to_string()
-        //     );
-        // } else { //     println!("Not found") // }
-        // let machine = component.node.find_child("AnimationTree".into());
-        // if machine.is_some() {
-        //     component.animation_tree = machine.unwrap().try_cast::<AnimationTree>();
-        // }
+        if component.animation_tree.is_none() {
+            component.animation_tree = component.character_root.as_ref().and_then(|x| {
+                x.find_child("AnimationTree".into())
+                    .and_then(|y| y.try_cast::<AnimationTree>())
+            });
+        }
 
         component
     }
 
-    fn process(&mut self, delta: f64) {
-        godot_print!("abacacdac");
+    fn physics_process(&mut self, delta: f64) {
+        godot_print!("Movemen componet tick");
         if self.character_root.is_none() {
             return;
         }
@@ -78,7 +80,7 @@ impl NodeVirtual for MovementComponent {
         let input = Input::singleton();
         let input_vec = input.get_vector("a".into(), "d".into(), "s".into(), "w".into());
 
-        let dir = Vector3::ONE
+        let dir = character.get_transform().basis
             * Vector3 {
                 x: input_vec.x,
                 y: 0.0,
@@ -101,6 +103,8 @@ impl NodeVirtual for MovementComponent {
 
             character.look_at(lerped_lookat);
 
+            self.last_lookat = lerped_lookat;
+
             character.set_velocity(Vector3 {
                 x: dir.x * self.speed,
                 y: character.get_velocity().y,
@@ -117,5 +121,9 @@ impl NodeVirtual for MovementComponent {
         character.move_and_slide();
     }
 
-    fn input(&mut self, event: Gd<InputEvent>) {}
+    fn input(&mut self, event: Gd<InputEvent>) {
+        if event.is_action_pressed("e".into()) {
+            self.hello();
+        }
+    }
 }

@@ -101,6 +101,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02292, 1.00284, -0.366671)
 
 [node name="CameraController" type="Node3D" parent="." groups=["CameraController"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11493, 2.82823, -0.192285)
+visible = false
 script = ExtResource("7_ggscm")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="CameraController"]

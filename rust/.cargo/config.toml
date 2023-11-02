@@ -1,0 +1,10 @@
+[unstable]
+unstable-options = true
+
+
+[build]
+out-dir = "./bin"
+
+
+[env]
+GODOT4_BIN = "~/bin/godot" # please make a symbol link
