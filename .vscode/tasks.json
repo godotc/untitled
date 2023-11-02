@@ -57,7 +57,7 @@
             "args": [],
             "group": "build",
             "options": {
-                "cwd": "${workspaceFolder}/rust"
+                "cwd": "${workspaceFolder}/extension/rust"
             },
             "presentation": {
                 "echo": true,
