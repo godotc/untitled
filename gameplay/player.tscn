@@ -28,7 +28,7 @@ advance_condition = &"idle"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bnstr"]
 advance_mode = 2
-advance_condition = &"walk"
+advance_condition = &"move"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lbnyy"]
 advance_mode = 2
@@ -56,7 +56,7 @@ advance_condition = &"floating"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tvyry"]
 advance_mode = 2
-advance_condition = &"walk"
+advance_condition = &"move"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sdykf"]
 advance_mode = 2
@@ -64,7 +64,6 @@ advance_condition = &"run"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wmf4n"]
 advance_mode = 2
-advance_condition = &"walk"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_gsts3"]
 states/Start/position = Vector2(-25, 31)
@@ -111,8 +110,8 @@ tree_root = SubResource("AnimationNodeStateMachine_gsts3")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/floating = false
 parameters/conditions/idle = true
+parameters/conditions/move = false
 parameters/conditions/run = false
-parameters/conditions/walk = false
 
 [node name="GeneralSkeleton" parent="." instance=ExtResource("3_gmsha")]
 bones/1/position = Vector3(0.000729459, 1.14049, 0.0104301)
