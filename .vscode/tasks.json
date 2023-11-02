@@ -36,6 +36,15 @@
                 "options": {
                     "cwd": "g:/ME/godot" // godot project's directory
                 },
+                "args": [
+                    "exec",
+                    "scons",
+                    // "use_llvm=yes",
+                    // "linker=lld",
+                    "module_mono_enable=yes",
+                    "compiledb=yes",
+                    "dev_build=yes"
+                ],
             },
             "promptOnClose": true,
             "presentation": {
