@@ -1,5 +1,4 @@
-use godot::engine::{InputEvent, InputEventMouseMotion, Node};
-use godot::prelude::utilities::clamp;
+use godot::engine::{InputEvent, InputEventMouseMotion};
 use godot::prelude::*;
 
 #[doc = "The movement component"]
@@ -46,4 +45,6 @@ impl Node3DVirtual for CameraController {
             self.node.set_rotation(roation);
         }
     }
+
 }
+

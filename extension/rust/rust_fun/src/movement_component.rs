@@ -1,7 +1,4 @@
-use godot::engine::{
-    AnimationTree, CharacterBody3D, Input, InputEvent, Node,
-    PhysicsDirectSpaceState2DExtensionVirtual,
-};
+use godot::engine::{AnimationTree, CharacterBody3D, Input, InputEvent, Node};
 use godot::prelude::utilities::move_toward;
 use godot::prelude::*;
 
@@ -71,7 +68,7 @@ impl NodeVirtual for MovementComponent {
     }
 
     fn physics_process(&mut self, delta: f64) {
-        godot_print!("Movemen componet tick");
+        godot_print!("Movemen componet tick {}", delta);
         if self.character_root.is_none() {
             return;
         }

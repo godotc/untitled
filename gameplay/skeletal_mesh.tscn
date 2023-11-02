@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cf87llj8wh5fy"]
+
+[ext_resource type="PackedScene" uid="uid://befqedblek74p" path="res://art/SK_female.tscn" id="1_qnrwd"]
+
+[node name="SkeletalMesh" instance=ExtResource("1_qnrwd")]

@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://clue8pk0vtw2u"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 6.0
+offset_right = 2.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00578, 1)
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="Button" type="Button" parent="CanvasGroup"]
+offset_left = 962.0
+offset_top = 557.0
+offset_right = 1103.0
+offset_bottom = 597.0
+
+[node name="Label" type="Label" parent="CanvasGroup/Button"]
+layout_mode = 0
+offset_right = 137.0
+offset_bottom = 37.0
+text = "rfadfad"
+
+[node name="Button2" type="Button" parent="CanvasGroup"]
+offset_left = 962.0
+offset_top = 557.0
+offset_right = 1103.0
+offset_bottom = 597.0
+
+[node name="Label" type="Label" parent="CanvasGroup/Button2"]
+layout_mode = 0
+offset_right = 137.0
+offset_bottom = 37.0
+text = "rfadfad"
+
+[node name="FileDialog" type="FileDialog" parent="CanvasGroup/Button2/Label"]
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Label"]
