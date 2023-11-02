@@ -15,6 +15,13 @@
                 "${workspaceFolder}",
                 "--single-window"
             ],
+            "windows": {
+                "args": [
+                    "--editor",
+                    "--path",
+                    "${workspaceFolder}",
+                ],
+            },
             "cwd": "${workspaceFolder}",
             "stopOnEntry": false,
             "preLaunchTask": "build",
@@ -27,7 +34,6 @@
             "args": [
                 "--path",
                 "${workspaceFolder}",
-                "--single-window"
             ],
             "cwd": "${workspaceFolder}",
             "stopOnEntry": false,
