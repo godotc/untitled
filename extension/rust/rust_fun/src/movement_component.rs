@@ -115,6 +115,28 @@ impl NodeVirtual for MovementComponent {
             });
         }
 
+        match self.animation_tree.as_mut() {
+            Some(tree) => {
+                tree.set(
+                    "parameters/conditions/idle".into(),
+                    Variant::from(input_vec == Vector2::ZERO && character.is_on_floor()),
+                );
+                tree.set(
+                    "parameters/conditions/walk".into(),
+                    Variant::from(input_vec != Vector2::ZERO && character.is_on_floor()),
+                );
+                tree.set(
+                    "parameters/conditions/jump".into(),
+                    Variant::from(input.is_action_pressed("space".into())),
+                );
+                tree.set(
+                    "parameters/conditions/floating".into(),
+                    Variant::from(!character.is_on_floor()),
+                );
+            }
+            None => todo!(),
+        }
+
         character.move_and_slide();
     }
 

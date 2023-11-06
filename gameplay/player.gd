@@ -24,7 +24,7 @@ func _physics_process(delta):
 	## Handle jump.
 	if Input.is_action_just_pressed("space") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-#
+#tt
 	## Get the input direction and handle the movement/deceleration.
 	## As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("a", "d", "w", "s")
