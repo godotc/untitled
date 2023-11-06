@@ -13,7 +13,8 @@ var lookat_node3d
 var last_lookat: Vector3
 
 func _ready():
-	lookat_node3d = get_tree().get_nodes_in_group("CameraController")[0].get_node("LookAt");
+	#lookat_node3d = get_tree().get_nodes_in_group("CameraController")[0].get_node("LookAt");
+	pass
 	
 func _physics_process(delta):
 	## Add the gravity.
@@ -47,10 +48,10 @@ func _physics_process(delta):
 		#velocity.z = move_toward(velocity.z, 0, SPEED)
 
 
-	$AnimationTree.set("parameters/conditions/idle", input_dir== Vector2.ZERO && is_on_floor());
-	$AnimationTree.set("parameters/conditions/walk", input_dir!= Vector2.ZERO&& is_on_floor());
-	$AnimationTree.set("parameters/conditions/jump", !is_on_floor() &&  Input.is_action_pressed("space"));
-	$AnimationTree.set("parameters/conditions/floating", !is_on_floor());
+	#$AnimationTree.set("parameters/conditions/idle", input_dir== Vector2.ZERO && is_on_floor());
+	#$AnimationTree.set("parameters/conditions/walk", input_dir!= Vector2.ZERO&& is_on_floor());
+	#$AnimationTree.set("parameters/conditions/jump", !is_on_floor() &&  Input.is_action_pressed("space"));
+	#$AnimationTree.set("parameters/conditions/floating", !is_on_floor());
 	#move_and_sttlide()
 	pass
 

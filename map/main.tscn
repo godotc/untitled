@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://datku2tasyk2i"]
+[gd_scene load_steps=17 format=3 uid="uid://datku2tasyk2i"]
 
 [ext_resource type="Script" path="res://map/main.gd" id="1_px6mu"]
 [ext_resource type="Shader" path="res://map/ground.gdshader" id="2_llm1c"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://iwrt20y4q25k" path="res://art/texture/sand/GroundSand005_DISP_2K.jpg" id="4_xje4t"]
 [ext_resource type="Script" path="res://map/ground_mesh.gd" id="5_0p37o"]
 [ext_resource type="PackedScene" uid="uid://ovblouw6a0x6" path="res://gameplay/player.tscn" id="6_7i0n8"]
-[ext_resource type="Script" path="res://gameplay/camera_controller.gd" id="7_fxx72"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yd2j2"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -98,20 +97,3 @@ shape = SubResource("BoxShape3D_wyyrt")
 
 [node name="Character" parent="." groups=["Player"] instance=ExtResource("6_7i0n8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02292, 1.13629, -0.366671)
-
-[node name="CameraController" type="Node3D" parent="." groups=["CameraController"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11493, 2.82823, -0.192285)
-visible = false
-script = ExtResource("7_fxx72")
-
-[node name="SpringArm3D" type="SpringArm3D" parent="CameraController"]
-transform = Transform3D(0.898388, -0.0752834, 0.432703, -0.0564625, 0.957228, 0.283771, -0.435559, -0.279368, 0.855711, 0, 0, 0)
-collision_mask = 3
-spring_length = 5.0
-margin = 0.075
-
-[node name="Camera3D" type="Camera3D" parent="CameraController/SpringArm3D"]
-transform = Transform3D(0.999947, 0.0102237, -0.000203356, -0.0101904, 0.997963, 0.062997, 0.000846505, -0.0629918, 0.998014, 0, 0, 0)
-
-[node name="LookAt" type="Node3D" parent="CameraController"]
-transform = Transform3D(0.936388, -0.0388066, 0.348816, -0.0430604, 0.973657, 0.223917, -0.348316, -0.224693, 0.910049, -0.451756, -0.244972, -2.65819)

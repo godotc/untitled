@@ -25,6 +25,7 @@
             "cwd": "${workspaceFolder}",
             "stopOnEntry": false,
             "preLaunchTask": "build",
+            "terminal": "integrated"
         },
         {
             "name": "Game(LLVM)",

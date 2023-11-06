@@ -39,8 +39,8 @@
                 "args": [
                     "exec",
                     "scons",
-                    // "use_llvm=yes",
-                    // "linker=lld",
+                    "use_llvm=true",
+                    "linker=lld",
                     "module_mono_enable=yes",
                     "compiledb=yes",
                     "dev_build=yes"

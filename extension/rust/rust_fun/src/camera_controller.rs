@@ -29,12 +29,13 @@ impl Node3DVirtual for CameraController {
         let mut component = Self {
             pivot,
             sensitivity: 5.0,
-            caemra: Some(Camera3D::new_alloc()),
+            caemra: None,
         };
 
-        component
-            .pivot
-            .add_child(component.get_caemra().unwrap().get_node::<Node>());
+        let camera = Camera3D::new_alloc();
+        let node = camera.clone().upcast::<Node>();
+        component.pivot.add_child(node);
+        component.caemra = Some(camera);
 
         component
     }
