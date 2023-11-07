@@ -11,6 +11,7 @@ func _init():
 		material.set_shader_parameter("height_scale", height_scale)
 		pass
 	pass
+
 	
 	
 func _ready():
